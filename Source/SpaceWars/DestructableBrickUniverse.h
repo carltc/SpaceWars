@@ -4,23 +4,20 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "DestructableBrickShape.h"
 #include "DestructableBrickUniverse.generated.h"
 
 UCLASS()
-class SPACEWARS_API ADestructableBrickUniverse : public AActor
+class SPACEWARS_API ADestructableBrickUniverse : public ADestructableBrickShape
 {
 	GENERATED_BODY()
-	
+
+private:
+
+	virtual void InitialiseBrickLocations() override;
+
 public:	
 	// Sets default values for this actor's properties
 	ADestructableBrickUniverse();
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 };
